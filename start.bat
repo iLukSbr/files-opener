@@ -1,8 +1,8 @@
-@echo off
+LE%@echo off
 @chcp 65001 > nul
 setlocal enabledelayedexpansion
 
-set "clPath=C:\Users\lucas\Documents\CL\C%~1\"
+set "clPath=%USERPROFILE%\Documents\CL\C%~1\"
 
 set c1=^
 	Chekov ^
