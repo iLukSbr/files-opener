@@ -42,9 +42,13 @@ $result = $form.ShowDialog()
 
 if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
   $choice = $richTextBox.Text
-  if ($choice -match '^[1-4]$') {
-    Start-Process "cmd.exe" -ArgumentList "/c start.bat $choice" -WindowStyle Hidden
+  if ($choice -eq 'copy') {
+    Start-Process "cmd.exe" -ArgumentList "/c src/copy_paste.bat" -WindowStyle Hidden
+  } elseif ($choice -eq 'close') {
+	  Start-Process "cmd.exe" -ArgumentList "/c src/close.bat" -WindowStyle Hidden
+  } elseif ($choice -match '^[1-5]$') {
+    Start-Process "cmd.exe" -ArgumentList "/c src/start.bat $choice" -WindowStyle Hidden
   } else {
-    [System.Windows.Forms.MessageBox]::Show('Opcao invalida. Insira um numero entre 1 e 4.', 'Opcao invalida.')
+    [System.Windows.Forms.MessageBox]::Show('Opcao invalida. Insira um numero entre 1 e 5.', 'Opcao invalida.')
   }
 }

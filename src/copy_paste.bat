@@ -2,7 +2,7 @@
 @chcp 65001 > nul
 setlocal enabledelayedexpansion
 
-set "clPath=%USERPROFILE%\Documents\CL\C%~1\"
+set "clPath=%USERPROFILE%\Documents\CL\C"
 
 set c1=^
 	Chekov ^
@@ -64,15 +64,12 @@ set c5=^
 	TPol ^
 	TravisMayweather
 
-for %%s in (!c%~1!) do (
-	set 
-    call :startCL %%s
-    timeout /t 3 /NOBREAK > nul
+for %%f in (%cd%\copy\*.txt) do (
+	for /L %%i in (1,1,5) do (
+		for %%s in (!c%%i!) do (
+			copy /Y %%f !clPath!%%i\%%s\CraftLandia\1.5\data\.minecraft\mods\macros
+		)
+	)
 )
 
 exit /B
-
-:startCL
-	cd "!clPath!%1"
-	start /B javaw.exe -Xmx128M -XX:-UseCompressedOops -jar "CraftLandia.jar"
-goto :eof
