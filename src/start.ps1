@@ -46,9 +46,9 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK) {
     Start-Process "cmd.exe" -ArgumentList "/c copy_paste.bat" -WindowStyle Hidden
   } elseif ($choice -eq 'close') {
 	  Start-Process "cmd.exe" -ArgumentList "/c close.bat" -WindowStyle Hidden
-  } elseif ($choice -match '^[1-5]$') {
+  } elseif ($choice -match '^[1-6]$') {
     Start-Process "cmd.exe" -ArgumentList "/c start.bat $choice" -WindowStyle Hidden
   } else {
-    [System.Windows.Forms.MessageBox]::Show('Opcao invalida. Insira um numero entre 1 e 5.', 'Opcao invalida.')
+    [System.Windows.Forms.MessageBox]::Show('Opcao invalida. Insira um numero entre 1 e 6.', 'Opcao invalida.')
   }
 }
