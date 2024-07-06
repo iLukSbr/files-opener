@@ -61,15 +61,25 @@ set c5=^
 	HoshiSato ^
 	MalcolmReed ^
 	Phlox ^
-	TPol ^
+	TPol
+
+set c6=^
+	ClevelandBooker ^
+	HughCulber ^
+	LaanNoonienSingh ^
+	PaulStamets ^
+	SylviaTilly ^
 	TravisMayweather
 
 for %%f in (%cd%\copy\*.txt) do (
-	for /L %%i in (1,1,5) do (
+	for /L %%i in (1,1,6) do (
 		for %%s in (!c%%i!) do (
 			copy /Y %%f !clPath!%%i\%%s\CraftLandia\1.5\data\.minecraft\mods\macros
 		)
 	)
+	copy /Y %%f %USERPROFILE%\Documents\CL\iLukS\CraftLandia\1.5\data\.minecraft\mods\macros
+	copy /Y %%f %USERPROFILE%\Documents\CL\PhilippaGeorgiou\CraftLandia\1.5\data\.minecraft\mods\macros
+	copy /Y %%f %USERPROFILE%\Documents\CL\iLukSMacrosoft\.macrosoft\1.5.2\.minecraft\mods\macros
 )
 
 exit /B
