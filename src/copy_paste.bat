@@ -79,6 +79,7 @@ for %%f in (%cd%\copy\*.txt) do (
 	)
 	copy /Y %%f %USERPROFILE%\Documents\CL\iLukS\CraftLandia\1.5\data\.minecraft\mods\macros
 	copy /Y %%f %USERPROFILE%\Documents\CL\PhilippaGeorgiou\CraftLandia\1.5\data\.minecraft\mods\macros
+	copy /Y %%f %USERPROFILE%\Documents\CL\MBenga\CraftLandia\1.5\data\.minecraft\mods\macros
 	copy /Y %%f %USERPROFILE%\Documents\CL\iLukSMacrosoft\.macrosoft\1.5.2\.minecraft\mods\macros
 )
 
